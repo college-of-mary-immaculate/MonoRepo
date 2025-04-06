@@ -1,0 +1,1030 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Basic:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+.jackpot-container {
+    width: 30%;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(to bottom, #ffdf00, #e6b800);
+    border-radius: 15px;
+    border: 3px solid black;
+    box-shadow: 0px 0px 15px rgba(255, 223, 0, 0.8),
+                0px 0px 30px rgba(255, 223, 0, 0.5);
+    animation: jackpot-glow 1.5s infinite alternate;
+}
+
+@keyframes jackpot-glow {
+    0% {
+        box-shadow: 0px 0px 25px rgba(255, 223, 0, 1),
+                    0px 0px 50px rgba(255, 223, 0, 0.8);
+    }
+    100% {
+        box-shadow: 0px 0px 35px rgba(255, 223, 0, 1),
+                    0px 0px 60px rgba(255, 223, 0, 1);
+    }
+}
+
+.jackpot-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 2px 2px 4px white;
+    margin-bottom: 5px;
+}
+
+.jackpot-box {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(to bottom, #fff100, #ffcc00);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6);
+    border: 3px solid black;
+}
+
+/* Logo Button Styling */
+.logo-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    /* border: none; */
+    cursor: pointer;
+}
+
+.logo-button img {
+    width: 50px;
+    height: 50px;
+}
+/* Developer Credits Popup Styles */
+.dev-popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.dev-popup.show {
+    display: block;
+    opacity: 1;
+    animation: popupFadeIn 0.5s ease-in-out;
+}
+
+@keyframes popupFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.dev-popup-content {
+    position: relative;
+    background: linear-gradient(135deg, #8907d5, #2d06ac);
+    margin: 15% auto;
+    padding: 25px;
+    width: 90%;
+    max-width: 400px;
+    border: 4px solid gold;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transform: scale(0.5);
+    animation: popupScale 0.5s forwards;
+}
+
+@keyframes popupScale {
+    0% {
+        transform: scale(0.5);
+    }
+    70% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.dev-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid gold;
+}
+
+.dev-popup-header h2 {
+    color: white;
+    margin: 0;
+    font-family: "Dela Gothic One", sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 28px;
+}
+
+.close-popup {
+    color: gold;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-popup:hover {
+    color: #ffcc00;
+    transform: scale(1.2);
+}
+
+.dev-names {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dev-name {
+    font-family: 'Gentium Basic', serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 215, 0, 0.6);
+    animation: nameGlow 2s infinite alternate;
+    transition: transform 0.3s;
+}
+
+.dev-name:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+@keyframes nameGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    }
+}
+
+.jackpot-box:hover {
+    box-shadow: inset 0 3px 7px rgba(255, 255, 255, 0.4),
+                0 8px 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+
+.winning-container {
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.winning-text {
+    font-family: "Dela Gothic One", sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 2px 2px 0 yellow, -2px -2px 0 yellow, 2px -2px 0 yellow, -2px 2px 0 yellow;
+    margin-bottom: 20px;
+}
+.winning-numbers {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.winning-numbers {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+/* Define colors for winning numbers with 3D effect */
+.number:nth-child(1) { background: linear-gradient(to bottom, #ff4d4d, #b30000); }
+.number:nth-child(2) { background: linear-gradient(to bottom, #4d79ff, #0033cc); }
+.number:nth-child(3) { background: linear-gradient(to bottom, #4dff4d, #009900); }
+.number:nth-child(4) { background: linear-gradient(to bottom, #b84dff, #6600cc); }
+.number:nth-child(5) { background: linear-gradient(to bottom, #ffff4d, #e6b800); }
+.number:nth-child(6) { background: linear-gradient(to bottom, #ff944d, #cc5200); }
+
+.number {
+    position: relative;
+    perspective: 1000px;
+    width: 80px;
+    height: 80px;
+    color: white;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-radius: 50%;
+    border: 3px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.6),
+                inset 3px 3px 6px rgba(0, 0, 0, 0.6),
+                5px 5px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s;
+
+}
+
+/* Hover effect for realistic 3D press-in look */
+.number:hover {
+    box-shadow: inset 5px 5px 8px rgba(0, 0, 0, 0.6),
+                inset -5px -5px 8px rgba(255, 255, 255, 0.6);
+    transform: scale(1.05);
+}
+
+/* Active effect for deep press */
+.number:active {
+    box-shadow: inset 8px 8px 12px rgba(0, 0, 0, 0.7),
+                inset -8px -8px 12px rgba(255, 255, 255, 0.7);
+    transform: scale(0.95);
+}
+/* Add these styles to lottongpinoy.css */
+
+/* Flip animation container */
+
+.number.flipping {
+    transform-style: preserve-3d;
+    animation: flipNumber 0.8s ease-in-out;
+}
+
+@keyframes flipNumber {
+    0% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+/* Adding sequence delay to make the flipping happen one after another */
+.number:nth-child(1).flipping { animation-delay: 0s; }
+.number:nth-child(2).flipping { animation-delay: 0.15s; }
+.number:nth-child(3).flipping { animation-delay: 0.3s; }
+.number:nth-child(4).flipping { animation-delay: 0.45s; }
+.number:nth-child(5).flipping { animation-delay: 0.6s; }
+.number:nth-child(6).flipping { animation-delay: 0.75s; }
+
+/* Add a shine effect during flip */
+.number.flipping::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0) 100%
+    ); */
+    animation: shine 0.8s ease-in-out;
+    border-radius: 50%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+
+.countdown-container {
+    position: absolute;
+    top: 45%;
+    left: 41%;
+    background: linear-gradient(to bottom, #57ff57, #00b300);
+    padding: 15px 30px;
+    border-radius: 20px;
+    border: 2px solid black;
+    box-shadow: inset 0 3px 7px rgba(255, 255, 255, 0.4),
+                0 8px 15px rgba(0, 0, 0, 0.5);}
+
+
+.countdown-text {
+    font-size: 26px;
+    font-weight: bold;
+    color: black;
+}
+
+.number-selection {
+    display: flex;
+    justify-content: center;
+    gap: 40px; 
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.bet-input {
+    width: 80px; /* Adjust the width */
+    height: 80px; /* Adjust the height */
+    font-size: 24px;
+    text-align: center;
+    border: 3px solid #444;
+    border-radius: 24px;
+    background: linear-gradient(to bottom, #fff, #ddd);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.bet-input:focus {
+    border-color: #ff9800;
+    box-shadow: 3px 3px 8px rgba(255, 152, 0, 0.6);
+    background: linear-gradient(to bottom, #fff, #bbb);
+}
+
+
+.bet-container {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border: 4px solid gold;
+    border-radius: 12px;
+    padding: 30px;
+    width: 900px; /* Increased width for a bigger effect */
+    text-align: center;
+    background: url('https://res.cloudinary.com/dpxfbom0j/image/upload/v1741791144/output-onlinepngtools_gae8oi.png'), linear-gradient(to bottom,#8907d5, #2d06ac, #47046f);
+    /* background-blend-mode: overlay; */
+    background-size: cover;
+    color: white;
+     box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.6), 
+                inset 4px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+button.bet-btn {
+    margin-left: 30px;
+}
+
+.reset-btn, .bet-btn {
+    font-family: 'Gentium Basic', serif;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid rgb(255, 240, 28);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5); /* 3D effect */
+    transition: all 0.2s ease-in-out;
+}
+
+.reset-btn {
+    background: linear-gradient(to bottom, #ff4d4d, #b30000);
+    color: white;
+}
+
+.bet-btn {
+    background: linear-gradient(to bottom, #3eb33e, #008f00);
+    color: white;
+}
+
+/* Hover effect */
+.reset-btn:hover, .bet-btn:hover {
+    box-shadow: inset 0 3px 7px rgba(255, 255, 255, 0.4),
+                0 8px 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+/* Active effect */
+.reset-btn:active, .bet-btn:active {
+    transform: scale(0.95);
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.last-winners {
+    border: 2px solid gold;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.3);
+}
+.profile-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    /* border: none; */
+    cursor: pointer;
+}
+
+.profile-button img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid rgb(240, 196, 0);
+    transition: transform 0.2s;
+}
+
+.profile-button img:hover {
+    transform: scale(1.1);
+}
+.winners-and-bets {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    gap: 20px;
+}
+
+/* Styles for Last Winner section */
+.last-winner {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid gold;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 
+                inset 0 2px 5px rgba(255, 255, 255, 0.1);
+    animation: winner-glow 2s infinite alternate;
+}
+
+@keyframes winner-glow {
+    0% { box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 
+                     inset 0 2px 5px rgba(255, 255, 255, 0.1); }
+    100% { box-shadow: 0 4px 12px rgba(255, 215, 0, 0.6), 
+                       inset 0 2px 5px rgba(255, 255, 255, 0.2); }
+}
+
+.last-winner p {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 22px;
+    color: #ffdf00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+}
+
+.winner-name {
+    background: linear-gradient(135deg, #ffcc00, #ff9900);
+    border-radius: 8px;
+    padding: 12px;
+    border: 2px solid #ffcc00;
+    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.winner-name:hover {
+    transform: scale(1.05);
+}
+
+.winner-name p {
+    font-family: 'Gentium Basic', serif;
+    font-size: 26px;
+    font-weight: bold;
+    color: #000;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+/* Style for the All Bets section */
+.all-bets {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #9966ff;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 
+                inset 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.all-bets p {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 22px;
+    color: #9966ff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+}
+
+.bet-details {
+    max-height: 150px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 10px;
+    border: 2px solid #9966ff;
+}
+
+.bet-details p {
+    font-family: 'Gentium Basic', serif;
+    font-size: 16px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    margin: 5px 0;
+    border-bottom: 1px solid rgba(153, 102, 255, 0.3);
+    transition: background-color 0.2s ease;
+}
+
+.bet-details p:hover {
+    background-color: rgba(153, 102, 255, 0.2);
+}
+
+.trigger-win-btn {
+    padding: 15px 30px;
+    font-size: 20px;
+    background: linear-gradient(to bottom, #57ff57, #008f00);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    box-shadow: 0 4px 0 #006600;
+    transition: all 0.2s;
+}
+
+.trigger-win-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #006600;
+}
+
+.trigger-win-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #006600;
+}
+
+/* Tablet devices (768px and below) */
+@media screen and (max-width: 768px) {
+    .winners-and-bets {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .last-winner p, .all-bets p {
+        font-size: 20px;
+    }
+    
+    .winner-name p {
+        font-size: 22px;
+    }
+
+    .dev-popup-content {
+        margin-top: 160px;
+        padding: 20px;
+    }
+    
+    .dev-popup-header h2 {
+        font-size: 24px;
+    }
+    
+    .dev-name {
+        font-size: 20px;
+        padding: 12px;
+    }
+
+    .jackpot-container {
+        top: 10%;
+        width: 35%;
+        padding: 10px;
+    }
+    
+    .jackpot-text {
+        font-size: 24px;
+    }
+    
+    .jackpot-box {
+        font-size: 32px;
+        padding: 10px;
+    }
+    
+    /* Winning numbers section */
+    .winning-container {
+        top: 30%;
+        width: 90%;
+    }
+    
+    .winning-text {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .winning-numbers {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .number {
+        width: 65px;
+        height: 65px;
+        font-size: 24px;
+    }
+    
+    /* Countdown container */
+    .countdown-container {
+        top: 42%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+    }
+    
+    .countdown-text {
+        font-size: 22px;
+    }
+    
+    /* Betting section */
+    .bet-container {
+        top: 52%;
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .number-selection {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .bet-input {
+        width: 65px;
+        height: 65px;
+        font-size: 24px;
+    }
+    
+    /* Buttons */
+    .reset-btn, .bet-btn {
+        padding: 10px 18px;
+        font-size: 16px;
+    }
+    
+    button.bet-btn {
+        margin-left: 15px;
+    }
+    
+    /* Logo and profile buttons */
+    .logo-button, .profile-button {
+        top: 15px;
+    }
+    
+    .logo-button {
+        left: 15px;
+    }
+    
+    .profile-button {
+        right: 15px;
+    }
+    
+    .logo-button img, .profile-button img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Medium mobile devices (576px and below) */
+@media screen and (max-width: 576px) {
+    .last-winner, .all-bets {
+        padding: 10px;
+    }
+    
+    .last-winner p, .all-bets p {
+        font-size: 18px;
+    }
+    
+    .winner-name p {
+        font-size: 20px;
+    }
+    
+    .bet-details {
+        max-height: 120px;
+    }
+    .jackpot-container {
+        top: 14%;
+        width: 50%;
+        padding: 8px;
+    }
+    
+    .jackpot-text {
+        font-size: 20px;
+    }
+    
+    .jackpot-box {
+        font-size: 26px;
+        padding: 8px;
+    }
+    
+    /* Winning numbers section */
+    .winning-container {
+        top: 29%;
+    }
+    
+    .winning-text {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    
+    .winning-numbers {
+        gap: 12px;
+    }
+    
+    .number {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    /* Countdown container */
+    .countdown-container {
+        top: 38%;
+        padding: 8px 15px;
+    }
+    
+    .countdown-text {
+        font-size: 18px;
+    }
+    
+    /* Betting section */
+    .bet-container {
+        top: 48%;
+        padding: 15px;
+    }
+    
+    .number-selection {
+        gap: 8px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .bet-input {
+        width: 50px;
+        height: 50px;
+        font-size: 14px;
+        border-radius: 15px;
+    }
+    
+    /* Bet amount section */
+    .bet-amount label {
+        font-size: 16px;
+    }
+    
+    #amount {
+        padding: 8px;
+        font-size: 18px;
+        width: 90px;
+    }
+    
+    /* Buttons */
+    .reset-btn, .bet-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+    
+    button.bet-btn {
+        margin-left: 10px;
+    }
+    
+    .last-winners {
+        padding: 8px;
+        font-size: 14px;
+    }
+    .logo-button img, .profile-button img {
+        width: 20px;
+        height: 20px;
+        border-width: 2px;
+    }
+}
+
+/* Small mobile devices (400px and below) */
+@media screen and (max-width: 400px) {
+    .last-winner p, .all-bets p {
+        font-size: 16px;
+    }
+    
+    .winner-name p {
+        font-size: 18px;
+    }
+    
+    .bet-details p {
+        font-size: 14px;
+    }
+    .dev-popup-content {
+        padding: 15px;
+        width: 85%;
+    }
+    
+    .dev-popup-header h2 {
+        font-size: 20px;
+    }
+    
+    .close-popup {
+        font-size: 24px;
+    }
+    
+    .dev-name {
+        font-size: 16px;
+        padding: 10px;
+    }
+    .jackpot-container {
+        top: 17%;
+        width: 50%;
+        padding: 6px;
+    }
+    
+    .jackpot-text {
+        font-size: 16px;
+        margin-bottom: 3px;
+    }
+    
+    .jackpot-box {
+        font-size: 22px;
+        padding: 6px;
+        border-width: 2px;
+    }
+    
+    /* Winning numbers section */
+    .winning-container {
+        top: 30%;
+        width: 95%;
+    }
+    
+    .winning-text {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    
+    .winning-numbers {
+        gap: 8px;
+    }
+    
+    .number {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        border-width: 2px;
+    }
+    
+    /* Countdown container */
+    .countdown-container {
+        top: 38%;
+        padding: 6px 12px;
+        border-width: 1px;
+    }
+    
+    .countdown-text {
+        font-size: 16px;
+    }
+    
+    /* Betting section */
+    .bet-container {
+        top: 45%;
+        width: 95%;
+        padding: 12px 8px;
+        border-width: 3px;
+    }
+    
+    .number-selection {
+        gap: 6px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .bet-input {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+        border-width: 2px;
+        border-radius: 12px;
+    }
+    
+    /* Bet amount section */
+    .bet-amount {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .bet-amount label {
+        font-size: 14px;
+    }
+    
+    #amount {
+        padding: 6px;
+        font-size: 16px;
+        width: 80px;
+        border-width: 2px;
+    }
+    
+    /* Buttons */
+    .reset-btn, .bet-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+        border-width: 1px;
+    }
+    
+    button.bet-btn {
+        margin-left: 6px;
+    }
+    
+    .last-winners {
+        padding: 5px;
+        font-size: 12px;
+        border-width: 1px;
+    }
+    
+    /* Logo and profile buttons */
+    .logo-button, .profile-button {
+        top: 10px;
+    }
+    
+    .logo-button {
+        left: 10px;
+    }
+    
+    .profile-button {
+        right: 10px;
+    }
+    
+    .logo-button img, .profile-button img {
+        width: 20px;
+        height: 20px;
+        border-width: 2px;
+    }
+}
+
+/* Extra small mobile devices (320px and below) */
+@media screen and (max-width: 320px) {
+    /* Further adjustments for tiny screens */
+    .logo-button img, .profile-button img {
+        width: 20px;
+        height: 20px;
+        /* border-radius: 2px; */
+
+    }
+    .jackpot-container {
+        top: 18%;
+    }
+    
+    .jackpot-text {
+        font-size: 14px;
+    }
+    
+    .jackpot-box {
+        font-size: 18px;
+    }
+    
+    .winning-container {
+        top: 30%;
+    }
+    
+    .winning-text {
+        font-size: 16px;
+    }
+    
+    .number {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    .countdown-container {
+        top: 37%;
+    }
+    
+    .countdown-text {
+        font-size: 14px;
+    }
+    
+    .bet-container {
+        top: 44%;
+    }
+    
+    .bet-input {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    /* Stack the buttons on very small screens */
+    .reset-btn, .bet-btn {
+        padding: 5px 10px;
+        font-size: 11px;
+        display: inline-block;
+        margin: 5px;
+    }
+    
+    button.bet-btn {
+        margin-left: 0;
+    }
+}

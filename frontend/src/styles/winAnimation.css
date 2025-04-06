@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+/* Position container for the trigger button */
+.trigger-container {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 200;
+}
+
+/* Styling for the trigger button */
+.trigger-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background: linear-gradient(to bottom, #ff9900, #ff6600);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 0 #cc5200;
+    transition: all 0.2s;
+}
+
+.trigger-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #cc5200;
+}
+
+.trigger-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #cc5200;
+}
+
+.winner-signboard {
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    background: linear-gradient(135deg, #ff00ff, #6600cc, #3300ff);
+    border-radius: 20px;
+    border: 6px solid gold;
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.8), 
+                0 0 100px rgba(255, 215, 0, 0.5),
+                inset 0 0 30px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    padding: 40px 20px;
+    z-index: 100;
+    transform: scale(0);
+    animation: popIn 0.5s ease-out forwards;
+    font-family: 'Dela Gothic One', sans-serif;
+    margin: 0 auto;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.winner-title {
+    font-size: 36px; /* Reduced from 50px */
+    color: #ffffff;
+    text-shadow: 2px 2px 0 gold, -2px -2px 0 gold, 2px -2px 0 gold, -2px 2px 0 gold,
+                 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.5);
+    margin-bottom: 20px;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+.prize-amount {
+    font-size: 70px;
+    font-weight: bold;
+    color: gold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin: 20px 0;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
+    50% { text-shadow: 0 0 20px gold, 0 0 40px gold; }
+    100% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
+}
+
+.matching-numbers {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.number-ball {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(to bottom, #fef2a0, #d4a900);
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    font-weight: light;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+    animation: bounce 0.5s ease-out;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(-200px); }
+    70% { transform: translateY(20px); }
+    90% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.continue-btn {
+    padding: 15px 30px;
+    font-size: 20px;
+    background: linear-gradient(to bottom, #57ff57, #008f00);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    box-shadow: 0 4px 0 #006600;
+    transition: all 0.2s;
+    display: inline-block;
+}
+
+.continue-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #006600;
+}
+
+.continue-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #006600;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    z-index: 1;
+}
+
+.star {
+    position: absolute;
+    background-color: gold;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.firework {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+@keyframes explode {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(30); opacity: 0; }
+}
+
+@keyframes fall {
+    0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+    75% { opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Responsive styles for tablets */
+@media screen and (max-width: 768px) {
+    .winner-signboard {
+        width: 95%;
+        padding: 30px 15px;
+    }
+    
+    .winner-title {
+        font-size: 30px; /* Reduced from 40px */
+    }
+    
+    .prize-amount {
+        font-size: 60px;
+    }
+    
+    .number-ball {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .matching-numbers {
+        gap: 15px;
+    }
+    
+    .trigger-container {
+        left: 15px;
+        top: 70px;
+    }
+    
+    .trigger-button {
+        padding: 12px 24px;
+        font-size: 12px;
+    }
+}
+
+/* Responsive styles for mobile phones */
+@media screen and (max-width: 480px) {
+    .winner-signboard {
+        width: 98%;
+        padding: 20px 10px;
+        border-width: 4px;
+    }
+    
+    .winner-title {
+        font-size: 22px; /* Reduced from 28px */
+        text-shadow: 1px 1px 0 gold, -1px -1px 0 gold, 1px -1px 0 gold, -1px 1px 0 gold,
+                     0 0 10px rgba(255, 215, 0, 0.8);
+    }
+    
+    .prize-amount {
+        font-size: 40px;
+        margin: 15px 0;
+    }
+    
+    .number-ball {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .matching-numbers {
+        gap: 10px;
+        margin: 20px 0;
+    }
+    
+    .continue-btn {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+    
+    .trigger-container {
+        left: 10px;
+    }
+    
+    .trigger-button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Responsive styles for small mobile phones */
+@media screen and (max-width: 320px) {
+    .winner-title {
+        font-size: 18px; /* Reduced from 24px */
+    }
+    
+    .prize-amount {
+        font-size: 32px;
+    }
+    
+    .number-ball {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    .continue-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .trigger-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,22 @@
+
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('https://res.cloudinary.com/dpxfbom0j/image/upload/v1741368262/-Raining-Coins-unscreen_yejjhx.gif') center/cover no-repeat,  
+  linear-gradient(to bottom, #47046f, #2d06ac, #8907d5, #2d06ac, #47046f);
+  /* background: url('https://res.cloudinary.com/dne9kr4vg/image/upload/v1741896169/Big-win--unscreen_cb6u7v.gif') center/cover no-repeat,  
+  linear-gradient(to bottom, #47046f, #2d06ac, #8907d5, #2d06ac, #47046f); */
+  
+  background-position: center;
+}
+
+h1 {
+  color: #f7df1e;
+  text-shadow: 0px 1px 3px black;
+}

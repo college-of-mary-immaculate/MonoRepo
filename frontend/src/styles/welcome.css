@@ -1,0 +1,118 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 65%;
+    max-width: 350px;
+    margin: 0 auto; /* Center the container */
+}
+
+.game-box {
+    width: 95%;
+    max-width: 500px;
+    height: 95vw;
+    max-height: 500px;
+    background: url('https://res.cloudinary.com/dne9kr4vg/image/upload/v1742017916/output-onlinepngtools_1_f07tyk.png'),
+    linear-gradient(to bottom,#8907d5, #2d06ac, #47046f);
+    background-size: cover;
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    /* background-blend-mode: overlay; */
+    border-radius: 72px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 4px solid gold;
+    margin: -30px auto 0; /* Simplified margin declaration for centering */
+}
+
+.logo {
+    width: 150%;
+}
+
+.play-container {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%); /* Center the play container */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.play-btn {
+    background: linear-gradient(to bottom, #e60000, #a40000); 
+    color: white;
+    border: 3px solid gold;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 42px;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+/* Pressed Effect */
+.play-btn:active {
+    box-shadow: 0 3px #3003034d, 0 5px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(3px);
+    background: linear-gradient(to bottom, #a40000, #800000);
+}
+
+/* Hover Effect */
+.play-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 70%;
+        max-width: none;
+    }
+
+    .game-box {
+        width: 70%; /* Slightly narrower width */
+        aspect-ratio: 1 / 1; 
+        border-radius: 56px;
+        padding: 15px;
+        margin-top: 50px;
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+    .play-btn {
+        padding: 16px 24px;
+        font-size: 20px;
+        border-radius: 36px;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%; /* Adjust for smallest screens */
+    }
+    
+    .game-box {
+        width: 85%; /* Further reduce width for smallest screens */
+        border-radius: 56px;
+        padding: 10px;
+        margin-top: 80px;
+    }
+
+    .play-btn {
+        padding: 16px 24px;
+        font-size: 20px;
+        border-radius: 24px;
+    }
+}

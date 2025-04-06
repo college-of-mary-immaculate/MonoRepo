@@ -1,0 +1,94 @@
+version: '3'
+services:
+  mysql_master:
+    image: mariadb:10.3
+    env_file:
+      - ./master/mysql_master.env
+    container_name: "mysql_master"
+    restart: "no"
+    ports:
+      - 4406:3306
+    volumes:
+      - ./master/conf/mysql.conf.cnf:/etc/mysql/conf.d/mysql.conf.cnf
+      - ./master/data:/var/lib/mysql
+      - ./db:/db
+    networks:
+      - overlay
+
+  mysql_slave:
+    image: mariadb:10.3
+    env_file:
+      - ./slave/mysql_slave.env
+    container_name: "mysql_slave"
+    restart: "no"
+    ports:
+      - 5506:3306
+    depends_on:
+      - mysql_master
+    volumes:
+      - ./slave/conf/mysql.conf.cnf:/etc/mysql/conf.d/mysql.conf.cnf
+      - ./slave/data:/var/lib/mysql
+      - ./db:/db
+    networks:
+      - overlay
+
+  backend_api:
+    build: ./backend
+    container_name: "lottong-pinoy-api"
+    environment:
+      - API_KEY={public_key}
+      - API_SECRET_KEY={private_key}
+      - DB_HOST_MASTER=mysql_master
+      - DB_HOST_SLAVE=mysql_slave
+      - DB_MASTER_USER=mydb_user
+      - DB_SLAVE_USER=mydb_slave_user
+      - DB_MASTER_PASSWORD=mydb_pwd
+      - DB_SLAVE_PASSWORD=mydb_slave_pwd
+      - DB_NAME=mydb
+    restart: "always"
+    ports:
+      - 3000:3000
+    depends_on:
+      - mysql_master
+      - mysql_slave
+    networks:
+      - overlay
+
+
+  app1:
+    build: ./frontend/
+    expose:
+      - 8000
+    environment:
+      - APPNAME=app1
+    ports:
+      - 8001:8000
+    networks:
+     - overlay
+  app2:
+    build: ./frontend/
+    expose:
+      - 8000
+    environment:
+      - APPNAME=app2
+    ports:
+      - 8002:8000
+    networks:
+     - overlay
+  loadbalancer:
+    build: ./haproxy
+    expose:
+      - 80
+    ports:
+      - 80:80
+    depends_on:
+      - app1
+      - app2
+    networks:
+     - overlay
+
+
+
+networks:
+  overlay:
+

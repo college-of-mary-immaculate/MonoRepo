@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Basic:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+h2 {
+    text-align: center;
+    -webkit-text-stroke: 0.2px black; 
+    color: gold; 
+    font-weight: bolder;
+    font-family: 'Jersey 20', sans-serif;
+}
+
+a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+button {
+    font-family: 'Gentium Basic', serif;
+    border-radius: 20px;
+    border: 3px solid gold;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.3), 
+                0 5px 10px rgba(0, 0, 0, 0.3); 
+}
+
+.sign-in-container button {
+    background-color: #007BFF;
+    color: white;
+}
+
+.sign-up-container button {
+    margin: 35px 20px 20px 20px;
+    background-color: #068724;
+    color: white;
+}
+
+button#signUp.overlay-sign-up {
+    background-color: #068724;
+    color: white;
+}
+
+button#signIn.overlay-sign-in {
+    background-color: #007BFF;
+    color: white;
+}
+
+button:hover {
+    box-shadow: inset 0 3px 7px rgba(255, 255, 255, 0.4),
+                0 8px 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    width: 150%;
+}
+
+form {
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+input {
+    background-color: #eee;
+    border: 3px solid gold; /* Updated border color */
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.3), 
+                0 5px 10px rgba(0, 0, 0, 0.3); /* Added box shadow for consistency */
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    border: 3px solid gold; /* Gold border */
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.container.right-panel-active .sign-in-container {
+    transform: translateX(100%);
+}
+
+.sign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+
+@keyframes show {
+    0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+.overlay {
+    background: linear-gradient(to right, #7f00ff, #4c0099);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    color: #FFFFFF;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+    transform: translateX(-20%);
+    background: url('https://res.cloudinary.com/dne9kr4vg/image/upload/v1741896169/Big-win--unscreen_cb6u7v.gif') center/cover no-repeat;    
+}
+
+.container.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateX(0);
+    background: url('https://res.cloudinary.com/dne9kr4vg/image/upload/v1741896169/Big-win--unscreen_cb6u7v.gif') center/cover no-repeat;    
+}
+
+.container.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}
+
+.overlay-panel h2 {
+    color: gold; /* Changed color to gold */
+}
+
+.small-logo{
+    width: 150px;
+}
+
+/* Mobile sign-up text is hidden by default on desktop */
+.mobile-signup {
+    display: none;
+}
+.mobile-signin {
+    display: none;
+}
+/* Add these media queries to the end of your logsignup.css file */
+
+@media screen and (max-width: 768px) {
+    body {
+        display: block;
+        padding: 20px; /* Add space around the edges */
+    }
+
+    .container {
+        min-height: 650px;
+        display: block;
+        margin: 0 auto; /* Center the container */
+        padding: 15px; /* Add some internal spacing */
+    }
+
+    .sign-in-container, 
+    .sign-up-container {
+        width: 100%;
+    }
+    
+    /* Hide the overlay container on mobile */
+    .overlay-container {
+        display: none;
+    }
+    
+    /* Show the mobile sign-up text in login form */
+    .mobile-signup {
+        display: block;
+        margin-top: 20px;
+    }
+    
+    /* Show the mobile sign-in text in register form */
+    .mobile-signin {
+        display: block;
+        margin-top: 20px;
+    }
+    
+    /* Cancel animation effects */
+    .container.right-panel-active .sign-in-container,
+    .container.right-panel-active .sign-up-container {
+        transform: none;
+    }
+    
+    /* Ensure forms are visible */
+    .sign-up-container {
+        opacity: 1;
+        z-index: 2;
+    }
+    
+    /* Make inputs slightly larger for mobile */
+    input {
+        padding: 15px;
+        margin: 10px 0;
+    }
+    
+    /* Adjust button size */
+    button {
+        padding: 12px 30px;
+    }
+    
+    /* Center the form better */
+    form {
+        padding: 0 30px;
+    }
+    a#mobileSignIn{
+        color: #007BFF;
+        text-decoration: underline;
+    }
+    a#mobileSignUp{
+        color: #068724;
+        text-decoration: underline;
+    }
+}
+
+/* Additional styles for very small screens */
+@media screen and (max-width: 480px) {
+    .container {
+        min-height: 550px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    .small-logo {
+        width: 120px;
+    }
+}

@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Basic:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    /* border: none; */
+    font-size: 30px;
+    cursor: pointer;
+    color: #ffcc00;
+    transition: transform 0.2s ease-in-out;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+}
+
+.profile-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    -webkit-text-stroke: 0.5px black; 
+    color: gold; /* Changed color to gold */
+    font-family: "Dela Gothic One", sans-serif;
+}
+
+.profile-container {
+    width: 530px;
+    padding: 30px;
+    background: url('https://res.cloudinary.com/dpxfbom0j/image/upload/v1741791144/output-onlinepngtools_gae8oi.png'), linear-gradient(to bottom,#8907d5, #2d06ac, #47046f);
+    border: 5px solid gold; /* Solid gold border */
+    border-radius: 15px;
+    box-shadow: 
+        0 5px 15px rgba(255, 204, 0, 0.6), /* Outer shadow */
+        inset 3px 3px 8px rgba(255, 255, 255, 0.3), /* Highlight effect */
+        inset -3px -3px 8px rgba(0, 0, 0, 0.4); /* Inner depth effect */
+    text-align: center;
+    font-family: 'Gentium Basic', serif;
+
+}
+
+.wallet-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+    
+}
+
+.wallet-box {
+    width: 200px;
+    padding: 20px;
+    background: linear-gradient(to bottom, #fff799, #fdd835);
+    border: 2px solid #b8860b;
+    border-radius: 12px;
+    box-shadow: 
+        inset 3px 3px 5px rgba(255, 255, 255, 0.6),
+        inset -3px -3px 5px rgba(0, 0, 0, 0.3),
+        5px 5px 10px rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+.wallet-box:active {
+    box-shadow: 
+        inset 5px 5px 10px rgba(0, 0, 0, 0.4),
+        inset -3px -3px 5px rgba(255, 255, 255, 0.3);
+    transform: translateY(2px);
+}
+
+.wallet-box p {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #111;
+}
+
+.wallet-box::before {
+    content: attr(data-label);
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffcc00;
+    color: #222;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(255, 204, 0, 0.5);
+}
+
+#cash-balance {
+    color: #00ff00;
+}
+
+#total-wins {
+    color: #ff5733;
+}
+
+.wallet-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.cash-in {
+    background: linear-gradient(to bottom, #007bff, #0056b3);
+    border: 3px solid #ffcc00;
+    color: white;
+    padding: 15px 35px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: inset 0 3px 7px rgba(255, 255, 255, 0.4),
+                0 8px 15px rgba(0, 0, 0, 0.5);    
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover effect */
+.cash-in:hover {
+    background: linear-gradient(to bottom, #0056b3, #004080);
+    box-shadow: inset 0 3px 7px rgba(255, 255, 255, 0.4),
+                0 8px 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+/* Active effect */
+.cash-in:active {
+    transform: scale(0.95);
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cash-out {
+    background: linear-gradient(to bottom, #28a745, #1e7e34);
+    border: 3px solid #ffcc00;
+    color: white;
+    padding: 15px 35px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: inset 0 3px 7px rgba(255, 255, 255, 0.4),
+                0 8px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover effect */
+.cash-out:hover {
+    background: linear-gradient(to bottom, #1e7e34, #155724);
+    transform: scale(1.05);
+}
+
+/* Active effect */
+.cash-out:active {
+    transform: scale(0.95);
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logout-button {
+    position: absolute;
+    bottom: 30px;
+    left: 84%;
+    background: linear-gradient(to bottom, #d00, #900);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 200px;
+    text-align: center;
+    box-shadow: 
+        4px 4px 8px rgba(0, 0, 0, 0.6),
+        inset -2px -2px 4px rgba(255, 100, 100, 0.3),
+        inset 2px 2px 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Hover Effect */
+.logout-button:hover {
+    background: linear-gradient(to bottom, #a00, #700);
+    box-shadow: 
+        6px 6px 12px rgba(0, 0, 0, 0.8);
+}
+
+.logout-button:active {
+    box-shadow: 
+        inset 6px 6px 10px rgba(0, 0, 0, 0.7),
+        inset -2px -2px 4px rgba(255, 100, 100, 0.3);
+}
+
+.username-email {
+    width: 90%;
+    max-width: 480px;
+    background: linear-gradient(to bottom, #333, #222);
+    border: 3px solid #ffcc00;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    box-shadow: 
+        inset 5px 5px 10px rgba(255, 255, 255, 0.2),
+        inset -5px -5px 10px rgba(0, 0, 0, 0.5),
+        6px 6px 12px rgba(0, 0, 0, 0.7);
+    margin-left: 20px;
+    text-align: center;
+}
+
+.username-email p {
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.username-email .username {
+    font-size: 24px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 3px rgba(255, 204, 0, 0.8);
+}
+
+.username-email .email {
+    font-size: 16px;
+    color: #ddd;
+}
+
+/* Popup Styles */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.popup-content {
+    width: 90%;
+    max-width: 400px;
+    background: linear-gradient(to bottom, #8907d5, #2d06ac, #47046f);
+    border: 5px solid gold;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(255, 204, 0, 0.7);
+    animation: popup-appear 0.3s ease-out;
+}
+
+@keyframes popup-appear {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(to right, #ffcc00, #ffd700, #ffcc00);
+    border-bottom: 3px solid #b8860b;
+}
+
+.popup-header h2 {
+    margin: 0;
+    color: #333;
+    font-family: "Dela Gothic One", sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+}
+
+.close-popup {
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-popup:hover {
+    color: #d00;
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.popup-body {
+    padding: 25px;
+    color: #fff;
+}
+
+.amount-input {
+    margin-bottom: 20px;
+}
+
+.amount-input label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.amount-input input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+.amount-input input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+}
+
+.available-balance {
+    margin-top: 10px;
+    color: #9eff9e;
+    font-size: 16px;
+    text-align: right;
+}
+
+.confirm-button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to bottom, #ffcc00, #ffd700);
+    border: none;
+    border-radius: 10px;
+    color: #333;
+    font-family: "Dela Gothic One", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s;
+}
+
+.confirm-button:hover {
+    background: linear-gradient(to bottom, #ffd700, #ffdf00);
+    transform: translateY(-3px);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.confirm-button:active {
+    transform: translateY(0);
+    box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 768px) {
+    .profile-container {
+        width: 90%;
+        max-width: 530px;
+        margin: 0 auto;
+        padding: 25px 20px;
+    }
+    
+    .profile-title {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+    
+    /* Keep wallet boxes side by side but make them smaller */
+    .wallet-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .wallet-box {
+        width: 45%;
+        max-width: 200px;
+        padding: 15px 10px;
+    }
+    
+    .username-email {
+        width: 95%;
+        margin: 0 auto 20px auto;
+    }
+    
+    .logout-button {
+        position: static;
+        margin: 30px auto 10px;
+        width: 80%;
+        max-width: 200px;
+        display: block;
+    }
+    
+    /* Keep cash-in and cash-out buttons side by side */
+    .wallet-buttons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
+    }
+    
+    .cash-in, .cash-out {
+        padding: 12px 20px;
+        font-size: 18px;
+        width: auto;
+        flex-direction: row;
+        gap: 30px;
+    }
+    .popup-content {
+        width: 84%;
+        max-width: 320px;
+    }
+    
+    .popup-header h2 {
+        font-size: 20px;
+    }
+    
+    .amount-input input {
+        padding: 12px;
+        font-size: 16px;
+    }
+    
+    .confirm-button {
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+    .back-button {
+        top: 10px;
+        left: 10px;
+        font-size: 14px;
+    }
+    
+    .profile-container {
+        width: 95%;
+        padding: 20px 15px;
+        border-width: 3px;
+        
+    }
+    
+    .profile-title {
+        font-size: 24px;
+        -webkit-text-stroke: 0.3px black;
+        margin-top: 80px;
+    }
+    
+    .username-email {
+        padding: 15px;
+    }
+    
+    .username-email .username {
+        font-size: 20px;
+    }
+    
+    .username-email .email {
+        font-size: 14px;
+    }
+    
+    /* Still keep wallet boxes side by side but smaller */
+    .wallet-box {
+        width: 45%;
+        padding: 12px 8px;
+        font-size: 15px;
+    }
+    
+    .wallet-box p {
+        font-size: 20px;
+        margin: 5px 0;
+    }
+    
+    .wallet-box::before {
+        font-size: 12px;
+        padding: 3px 8px;
+        top: -10px;
+    }
+    .wallet-buttons {
+        gap: 40px;
+    }
+    
+    /* Keep cash-in and cash-out buttons side by side but smaller */
+    .cash-in, .cash-out {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    
+    .logout-button {
+        font-size: 16px;
+        padding: 10px 15px;
+        width: 90%;
+        margin-top: 25px;
+    }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 320px) {
+    .back-button {
+        top: 5px;
+        left: 5px;
+        font-size: 10px;
+    }
+    .profile-container {
+        padding: 15px 10px;
+    }
+    
+    .profile-title {
+        font-size: 20px;
+    }
+    
+    .username-email {
+        padding: 12px;
+    }
+    
+    .username-email .username {
+        font-size: 18px;
+    }
+    
+    .username-email .email {
+        font-size: 12px;
+    }
+    
+    /* Keep side by side but even smaller for tiny screens */
+    .wallet-box {
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+    
+    .wallet-box p {
+        font-size: 16px;
+        margin: 3px 0;
+    }
+    
+    .wallet-box::before {
+        font-size: 10px;
+        padding: 2px 6px;
+        top: -8px;
+    }
+    
+    /* Keep side by side but smaller */
+    .wallet-buttons {
+        gap: 40px;
+    }
+    
+    .cash-in, .cash-out {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .logout-button {
+        font-size: 12px;
+        padding: 10px 5px;
+    }
+}
